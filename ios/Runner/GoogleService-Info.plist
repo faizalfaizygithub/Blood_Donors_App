@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyD9h2M2k2C6SWYUk4XJY9ZoVEBI1QjaDUM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>10448338651</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.bloodDonorsApp</string>
+	<key>PROJECT_ID</key>
+	<string>blooddonationapp-a24fe</string>
+	<key>STORAGE_BUCKET</key>
+	<string>blooddonationapp-a24fe.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:10448338651:ios:c3d9e51128d0a34ddf16fe</string>
+</dict>
+</plist>
