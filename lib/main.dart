@@ -1,5 +1,6 @@
 import 'package:blood_donors_app/screens/addPage.dart';
 import 'package:blood_donors_app/screens/homePage.dart';
+import 'package:blood_donors_app/screens/splashPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        'homePage': (context) => const HomePage(),
-        'addPage': (context) => const AddUser(),
-      },
-      initialRoute: 'homePage',
-    );
+        debugShowCheckedModeBanner: false,
+        routes: {
+          'splashPage': (context) => const SplashScreen(),
+          'homePage': (context) => const HomePage(),
+          'addPage': (context) => const AddUser(),
+        },
+        initialRoute: 'splashPage');
   }
 }

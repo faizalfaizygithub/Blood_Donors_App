@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AddUser extends StatefulWidget {
@@ -19,6 +20,19 @@ class _AddUserState extends State<AddUser> {
     'O-',
   ];
   String? selectedGroups;
+  final CollectionReference donor =
+      FirebaseFirestore.instance.collection('donor');
+  TextEditingController donorName = TextEditingController();
+  TextEditingController donorPhone = TextEditingController();
+  void addDoner() {
+    final data = {
+      'name': donorName.text,
+      'phone': donorPhone.text,
+      'group': selectedGroups
+    };
+    donor.add(data);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,19 +47,21 @@ class _AddUserState extends State<AddUser> {
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: ListView(children: [
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: TextField(
-              decoration: InputDecoration(
+              controller: donorName,
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text('Donor Name'),
                   labelStyle: TextStyle(color: Colors.black)),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
             child: TextField(
-              decoration: InputDecoration(
+              controller: donorPhone,
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 label: Text('Phone Number'),
               ),
@@ -72,7 +88,10 @@ class _AddUserState extends State<AddUser> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                addDoner();
+                Navigator.pop(context);
+              },
               style: ButtonStyle(
                   minimumSize: MaterialStateProperty.all(
                     const Size(double.infinity, 50),

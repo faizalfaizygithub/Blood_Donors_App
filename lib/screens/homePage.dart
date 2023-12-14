@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: StreamBuilder(
-          stream: donor.snapshots(),
+          stream: donor.orderBy('name').snapshots(),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
@@ -52,9 +52,9 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.grey.shade300,
-                                  blurRadius: 10,
-                                  spreadRadius: 15),
+                                  color: Colors.grey.shade400,
+                                  blurRadius: 15,
+                                  spreadRadius: 10),
                             ]),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                                   radius: 30,
                                   child: Text(
                                     donorSnap['group'],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 25),
                                   ),
                                 ),
@@ -78,13 +78,13 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Text(
                                   donorSnap['name'],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
                                   donorSnap['phone'].toString(),
-                                  style: TextStyle(fontSize: 18),
+                                  style: const TextStyle(fontSize: 18),
                                 ),
                               ],
                             ),
@@ -100,12 +100,12 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.delete),
+                                  icon: const Icon(Icons.delete),
                                   iconSize: 30,
                                   color: Colors.red,
                                 ),
                               ],
-                            )
+                            ),
                           ],
                         ),
                       ));
