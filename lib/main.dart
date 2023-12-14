@@ -1,6 +1,7 @@
 import 'package:blood_donors_app/screens/addPage.dart';
 import 'package:blood_donors_app/screens/homePage.dart';
 import 'package:blood_donors_app/screens/splashPage.dart';
+import 'package:blood_donors_app/screens/updatePage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
           'splashPage': (context) => const SplashScreen(),
           'homePage': (context) => const HomePage(),
           'addPage': (context) => const AddUser(),
+          'updatePage': (context) => const UpdatePage()
         },
         initialRoute: 'splashPage');
   }
